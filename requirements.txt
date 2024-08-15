@@ -2,3 +2,4 @@ Flask==2.2.2
 transformers==4.28.1
 torch==1.13.1
 uvicorn==0.20.0
+werkzeug>=2.0.0  
