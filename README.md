@@ -1,4 +1,4 @@
-# BLOOM Text Generation App
+Inkrealm BLOOM Text App
 
 This is a Flask application that utilizes the BLOOM-560M language model for text generation.
 
