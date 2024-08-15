@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bloom Q&A</title>
+  <style>
+    body {
+      background-color: #181818;
+      color: #eee;
+      font-family: sans-serif;
+    }
+
+    #container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #question {
+      margin-bottom: 10px;
+    }
+
+    #answer {
+      border: 1px solid #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Ask Bloom a Question</h1>
+    <input type="text" id="question" placeholder="Enter your question here">
+    <button onclick="askQuestion()">Ask</button>
+    <div id="answer"></div>
+  </div>
+
+  <script>
+    function askQuestion() {
+      // Replace with your actual logic to interact with the Bloom engine
+      const question = document.getElementById('question').value;
+      const answerDiv = document.getElementById('answer');
+      answerDiv.textContent = "Loading answer...";
+
+      // Example using fetch (replace with your API call)
+      fetch('/api/ask?question=' + encodeURIComponent(question))
+        .then(response => response.text())
+        .then(answer => {
+          answerDiv.textContent = answer;
+        })
+        .catch(error => {
+          answerDiv.textContent = "Error fetching answer.";
+          console.error(error);
+        });
+    }
+  </script>
+</body>
+</html>
