@@ -1,0 +1,14 @@
+name: inkrealm  # Replace with your project name
+env: production
+services:
+  - type: web
+    name: web
+    instance_type: free
+    source:
+      repo: your-github-username/urb-octo-snork  # Replace with your repo URL
+      branch: main
+    build:
+      command: echo "No build step"
+    start:
+      command: gunicorn wsgi:application
+    
